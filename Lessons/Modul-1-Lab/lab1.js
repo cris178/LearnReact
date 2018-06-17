@@ -6,10 +6,6 @@ import registerServiceWorker from './registerServiceWorker';
 
 //Use this file to test JS React files
 
-//
-
-//Lab 1
-
 //Lab 1 Create a Car Dealership Web app
 function SiteTitle(props){
   return(
@@ -59,7 +55,6 @@ function DropDown(props){
 function Table(props){
     return(
       <div>
-        <h2>{props.title}</h2>
         <table>
           <tr>
             <th>Year</th>
@@ -78,11 +73,42 @@ function Table(props){
     )
 }
 
+function VehicleData(props){
+  return(
+    <div>
+    {props.lists.map((vehicle) =>{
+      return <Table year={vehicle[0]} model={vehicle[1]} price={vehicle[2]} />
+   })}
+    </div>
+  )
+}
+
+function InfoTable(props){
+  return(
+    <div>
+      <h2>{props.type}</h2>
+      <VehicleData lists={props.lists}/>
+    </div>
+  )
+}
+
+function DisplayTable(props){
+  return(
+    <div>
+      <InfoTable type={"Cars"} lists={[["2013", "A", "$32000"], ["2011", "B", "$4400"], ["2016", "B", "15500"]]} />
+      <InfoTable type={"Trucks"} lists={[["2014", "D", "$1800"], ["2013", "E", "$5200"]]}/>
+      <InfoTable type={"Convertibles"} lists={[["2009", "F", "2000"], ["2010", "G", "6000"], ["2012", "H", "12500"], ["2017", "M", "50000"]]}/>
+    </div>
+
+  )
+}
+
 function CarApp(props){
   return(
     <div>
       <SiteTitle  title = "Welcome to Tesla" description = "The most innovative green vehicles on the planet"/>
       <Options />
+      <DisplayTable />
     </div>
   )
 }
@@ -93,4 +119,5 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
+//ReactDOM.render(<Feature active = {true}/>, document.getElementById('root'));
 registerServiceWorker();

@@ -1,0 +1,38 @@
+body{
+  background-color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-weight:regular;
+  color:black;
+}
+div{
+  display: inline;
+}
+table{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+td, th {
+    border: 1px solid gray;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+  background-color: #dddddd;
+}
+
+button{
+  background-color: #dddddd;
+  padding: 8px 20px;
+  font-weight: bold;
+}
+
+input{
+  margin-left: 5px;
+}
+
+select{
+  margin-left: 5px;
+}
